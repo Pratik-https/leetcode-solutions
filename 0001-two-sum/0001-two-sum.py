@@ -1,12 +1,14 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         n = len(nums)
+        seen = {}
 
         for i in range(n):
-            remaining = target - nums[i]
-            for j in range(i+1,n):
-                if nums[j] == remaining:
-                    return [i,j]        
+          remaining = target - nums[i]
+          if remaining in seen:
+            return [seen[remaining],i]
+          seen[nums[i]] = i
+
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
