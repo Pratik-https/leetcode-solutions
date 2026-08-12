@@ -1,13 +1,13 @@
 class Solution(object):
     def maxProfit(self, prices):
-        n = len(prices)
         min_price = prices[0]
         ans = 0
 
-        for i in range(1,n):
-            min_price = min(min_price,prices[i])
-            curr_profit = prices[i] - min_price
-            ans = max(ans,curr_profit)
+        for price in prices[1:]:
+            min_price = min(min_price, price)
+            curr_profit = price - min_price
+            ans = max(ans, curr_profit)
+
         return ans
         
 
