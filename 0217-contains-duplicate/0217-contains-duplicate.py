@@ -1,18 +1,12 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        n = len(nums)
-        dict = {}
+        set1 = set({})
 
-        for i in range(n):
-            if nums[i] in dict:
-                dict[nums[i]] += 1
-            else:
-                dict[nums[i]] = 1
-            
-            if dict[nums[i]] >= 2:
+        for num in nums:
+            if num in set1:
                 return True
+            set1.add(num)
         return False
-        
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
